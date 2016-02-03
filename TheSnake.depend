@@ -1,0 +1,141 @@
+# depslib dependency file v1.0
+1454409555 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
+	<iostream>
+	<GL/glew.h>
+	"display.h"
+	"mesh.h"
+	"shader.h"
+	"texture.h"
+	"transform.h"
+	"camera.h"
+	"game.h"
+
+1448318054 source:/home/akrastev/Codeblocks/TheSnake/display.cpp
+	"display.h"
+	<GL/glew.h>
+	<iostream>
+
+1447922321 /home/akrastev/Codeblocks/TheSnake/display.h
+	<string>
+	<SDL2/SDL.h>
+
+1454453507 source:/home/akrastev/Codeblocks/TheSnake/mesh.cpp
+	"mesh.h"
+	<vector>
+
+1454453269 /home/akrastev/Codeblocks/TheSnake/mesh.h
+	<string>
+	<vector>
+	"obj_loader.h"
+	<glm/glm.hpp>
+	<GL/glew.h>
+
+1448036658 /home/akrastev/Codeblocks/TheSnake/shader.h
+	<string>
+	<GL/glew.h>
+	"transform.h"
+	"camera.h"
+
+1448316883 source:/home/akrastev/Codeblocks/TheSnake/shader.cpp
+	"shader.h"
+	<fstream>
+	<iostream>
+
+1447935026 source:/home/akrastev/Codeblocks/TheSnake/stb_image.c
+	"stb_image.h"
+	<math.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<memory.h>
+	<assert.h>
+	<stdarg.h>
+
+1447935035 /home/akrastev/Codeblocks/TheSnake/stb_image.h
+	<stdio.h>
+
+1447936975 /home/akrastev/Codeblocks/TheSnake/texture.h
+	<string>
+	<GL/glew.h>
+
+1447937020 source:/home/akrastev/Codeblocks/TheSnake/texture.cpp
+	"texture.h"
+	"stb_image.h"
+	<cassert>
+	<iostream>
+
+1448032883 /home/akrastev/Codeblocks/TheSnake/transform.h
+	<glm/glm.hpp>
+	<glm/gtx/transform.hpp>
+
+1448036873 /home/akrastev/Codeblocks/TheSnake/camera.h
+	<glm/glm.hpp>
+	<glm/gtx/transform.hpp>
+
+1448314695 /home/akrastev/Codeblocks/TheSnake/obj_loader.h
+	<glm/glm.hpp>
+	<vector>
+	<string>
+
+1448314680 source:/home/akrastev/Codeblocks/TheSnake/obj_loader.cpp
+	"obj_loader.h"
+	<fstream>
+	<iostream>
+	<algorithm>
+	<map>
+
+1454456215 source:/home/akrastev/Codeblocks/TheSnake/snake.cpp
+	"snake.h"
+	"mesh.h"
+
+1454456374 /home/akrastev/Codeblocks/TheSnake/snake.h
+	<deque>
+	<SDL2/SDL.h>
+	"renderable.h"
+
+1454456296 source:/home/akrastev/Codeblocks/TheSnake/game.cpp
+	"game.h"
+	<SDL2/SDL.h>
+	"mesh.h"
+	<iostream>
+
+1454455940 /home/akrastev/Codeblocks/TheSnake/game.h
+	"snake.h"
+	"walls.h"
+	<vector>
+
+1454409965 /home/akrastev/Codeblocks/TheSnake/gameobject.h
+	"component.h"
+	<string>
+	<vector>
+	"glm/gtx/transform.hpp"
+
+1453459123 source:/home/akrastev/Codeblocks/TheSnake/component.cpp
+	"component.h"
+
+1453459614 /home/akrastev/Codeblocks/TheSnake/component.h
+
+1454414634 source:/home/akrastev/Codeblocks/TheSnake/gameobject.cpp
+	"gameobject.h"
+
+1453459324 source:/home/akrastev/Codeblocks/TheSnake/collisioncomponent.cpp
+	"collisioncomponent.h"
+
+1453460777 /home/akrastev/Codeblocks/TheSnake/collisioncomponent.h
+	"component.h"
+
+1454456167 /home/akrastev/Codeblocks/TheSnake/renderable.h
+	"gameobject.h"
+	"mesh.h"
+	<glm/glm.hpp>
+	<vector>
+
+1454456132 source:/home/akrastev/Codeblocks/TheSnake/renderable.cpp
+	"renderable.h"
+
+1454455809 /home/akrastev/Codeblocks/TheSnake/walls.h
+	"renderable.h"
+
+1454456182 source:/home/akrastev/Codeblocks/TheSnake/walls.cpp
+	"walls.h"
+
