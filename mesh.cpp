@@ -13,26 +13,22 @@ Mesh::Mesh(const std::string& filename)
 }
 
 
-Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indicies)
+Mesh::Mesh(std::vector<Vertex> vertices)
 {
     IndexedModel model;
-    addVertices(vertices, indicies, model);
+    addVertices(vertices, model);
     InitMesh(model);
 }
 
-void Mesh::addVertices(std::vector<Vertex> vertices, std::vector<unsigned int> indicies, IndexedModel& model)
+void Mesh::addVertices(std::vector<Vertex> vertices, IndexedModel& model)
 {
+    unsigned int i=model.indices.size();
     for( auto it = vertices.begin(); it != vertices.end(); it++ ) {
         model.positions.push_back(*it->getPos());
         model.texCoords.push_back(*it->getTexCoord());
         model.normals.push_back(*it->getNormal());
+        model.indices.push_back(i++);
     }
-
-    for( auto it = indicies.begin(); it != indicies.end(); it++)
-    {
-        model.indices.push_back(*it);
-    }
-
 }
 
 Mesh::~Mesh()

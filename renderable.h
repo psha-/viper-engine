@@ -18,8 +18,6 @@ class Renderable : public GameObject
     protected:
         Mesh m_mesh;
         IndexedModel m_model;
-        std::vector<Vertex> vertices;
-        std::vector<unsigned int> indices;
     private:
 };
 

@@ -6,22 +6,16 @@ Renderable::Renderable():m_model()
 
 void Renderable::DrawSquare( glm::vec3 p, float l )
 {
-        vertices.push_back(Vertex(glm::vec3(p.x+l, p.y,   0), glm::vec2(0,0)));
-        vertices.push_back(Vertex(glm::vec3(p.x,   p.y,   0), glm::vec2(0,0)));
-        vertices.push_back(Vertex(glm::vec3(p.x+l, p.y+l, 0), glm::vec2(0,0)));
-        vertices.push_back(Vertex(glm::vec3(p.x,   p.y,   0), glm::vec2(0,0)));
-        vertices.push_back(Vertex(glm::vec3(p.x,   p.y+l, 0), glm::vec2(0,0)));
-        vertices.push_back(Vertex(glm::vec3(p.x+l, p.y+l ,0), glm::vec2(0,0)));
+        std::vector<Vertex> vertices = {
+            Vertex(glm::vec3(p.x+l, p.y,   0), glm::vec2(0,0)),
+            Vertex(glm::vec3(p.x,   p.y,   0), glm::vec2(0,0)),
+            Vertex(glm::vec3(p.x+l, p.y+l, 0), glm::vec2(0,0)),
+            Vertex(glm::vec3(p.x,   p.y,   0), glm::vec2(0,0)),
+            Vertex(glm::vec3(p.x,   p.y+l, 0), glm::vec2(0,0)),
+            Vertex(glm::vec3(p.x+l, p.y+l ,0), glm::vec2(0,0)),
+        };
 
-        unsigned int i=indices.size();
-        indices.push_back(i++);
-        indices.push_back(i++);
-        indices.push_back(i++);
-        indices.push_back(i++);
-        indices.push_back(i++);
-        indices.push_back(i++);
-
-        m_mesh.addVertices(vertices, indices, m_model);
+        m_mesh.addVertices(vertices, m_model);
 }
 
 void Renderable::ResetMesh()

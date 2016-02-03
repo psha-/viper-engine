@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1454409555 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
+1454502203 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
 	<iostream>
 	<GL/glew.h>
 	"display.h"
@@ -19,11 +19,11 @@
 	<string>
 	<SDL2/SDL.h>
 
-1454453507 source:/home/akrastev/Codeblocks/TheSnake/mesh.cpp
+1454509143 source:/home/akrastev/Codeblocks/TheSnake/mesh.cpp
 	"mesh.h"
 	<vector>
 
-1454453269 /home/akrastev/Codeblocks/TheSnake/mesh.h
+1454509237 /home/akrastev/Codeblocks/TheSnake/mesh.h
 	<string>
 	<vector>
 	"obj_loader.h"
@@ -84,7 +84,7 @@
 	<algorithm>
 	<map>
 
-1454456522 source:/home/akrastev/Codeblocks/TheSnake/snake.cpp
+1454509612 source:/home/akrastev/Codeblocks/TheSnake/snake.cpp
 	"snake.h"
 	"mesh.h"
 
@@ -124,18 +124,18 @@
 1453460777 /home/akrastev/Codeblocks/TheSnake/collisioncomponent.h
 	"component.h"
 
-1454456167 /home/akrastev/Codeblocks/TheSnake/renderable.h
+1454508451 /home/akrastev/Codeblocks/TheSnake/renderable.h
 	"gameobject.h"
 	"mesh.h"
 	<glm/glm.hpp>
 	<vector>
 
-1454456132 source:/home/akrastev/Codeblocks/TheSnake/renderable.cpp
+1454509485 source:/home/akrastev/Codeblocks/TheSnake/renderable.cpp
 	"renderable.h"
 
 1454455809 /home/akrastev/Codeblocks/TheSnake/walls.h
 	"renderable.h"
 
-1454456182 source:/home/akrastev/Codeblocks/TheSnake/walls.cpp
+1454509319 source:/home/akrastev/Codeblocks/TheSnake/walls.cpp
 	"walls.h"
 

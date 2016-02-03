@@ -41,10 +41,10 @@ class Vertex
 class Mesh
 {
     public:
-        Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indicies);
+        Mesh(std::vector<Vertex> vertices);
         Mesh(const std::string& filename);
         Mesh();
-        void addVertices(std::vector<Vertex> vertices, std::vector<unsigned int> indicies, IndexedModel& model);
+        void addVertices(std::vector<Vertex> vertices, IndexedModel& model);
         void InitMesh(const IndexedModel& model);
         void Draw();
         virtual ~Mesh();

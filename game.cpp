@@ -101,35 +101,3 @@ bool Game::testCollision(const Iterator& begin, const Iterator& end)
     }
     return false;
 }
-/*
-template<typename Iterator>
-void Game::Draw(const Iterator& begin, const Iterator& end)
-{
-
-    auto vertices = std::vector<Vertex>();
-    vertices.reserve(30);
-    auto indices = std::vector<unsigned int>();
-    indices.reserve(30*3);
-
-    unsigned int i =0;
-
-    for( Iterator it = begin; it != end; ++it ) {
-        vertices.push_back(Vertex(glm::vec3((*it).first+1, (*it).second, 0), glm::vec2(0,0)));
-        vertices.push_back(Vertex(glm::vec3((*it).first, (*it).second, 0), glm::vec2(0,0)));
-        vertices.push_back(Vertex(glm::vec3((*it).first+1, (*it).second+1, 0), glm::vec2(0,0)));
-        vertices.push_back(Vertex(glm::vec3((*it).first, (*it).second, 0), glm::vec2(0,0)));
-        vertices.push_back(Vertex(glm::vec3((*it).first, (*it).second+1, 0), glm::vec2(0,0)));
-        vertices.push_back(Vertex(glm::vec3((*it).first+1, (*it).second+1 ,0), glm::vec2(0,0)));
-        indices.push_back(i++);
-        indices.push_back(i++);
-        indices.push_back(i++);
-        indices.push_back(i++);
-        indices.push_back(i++);
-        indices.push_back(i++);
-    }
-    Mesh mesh(vertices, indices);
-    mesh.Draw();
-
-}
-
-*/

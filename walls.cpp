@@ -8,16 +8,16 @@ Walls::Walls()
 void Walls::Init()
 {
     m_segments.reserve(50);
-    for( short int i=-10; i<=10; i++ ) {
+    for( short int i=-10; i<=10; ++i ) {
         m_segments.push_back(std::pair<short, short>(i, -10));
     }
-    for( short int i=-10; i<=10; i++ ) {
+    for( short int i=-10; i<=10; ++i ) {
         m_segments.push_back(std::pair<short, short>(i, 10));
     }
-    for( short int i=-9; i<=9; i++ ) {
+    for( short int i=-9; i<=9; ++i ) {
         m_segments.push_back(std::pair<short, short>(-10, i));
     }
-    for( short int i=-9; i<=9; i++ ) {
+    for( short int i=-9; i<=9; ++i ) {
         m_segments.push_back(std::pair<short, short>(10, i));
     }
     for( auto it = m_segments.begin(); it != m_segments.end(); ++it ) {
