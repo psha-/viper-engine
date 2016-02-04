@@ -1,7 +1,9 @@
 #include "snake.h"
 #include "mesh.h"
+#include "apple.h"
+#include "walls.h"
 
-Snake::Snake()
+Snake::Snake():addingSegment(false)
 {
 }
 
@@ -39,11 +41,10 @@ void Snake::pushDirection(unsigned short dir) {
 
 void Snake::Die() {
     m_segments.clear();
+    Temporal::Die();
 }
 
 void Snake::AddSegment() {
-    //auto newSegment = m_segments.back();
-    //m_segments.push_back(newSegment);
     addingSegment = true;
 }
 
@@ -85,6 +86,41 @@ void Snake::Move()
 
 void Snake::Update(float deltaTime)
 {
+    std::vector<Materialized*> collisions = GetCollisions();
+    for( auto it = collisions.begin(); it != collisions.end(); ++it ) {
+        if( static_cast<Apple*>(*it) != nullptr ) {
+            //(*it)->Die();
+            //AddSegment();
+        }
+        if( static_cast<Walls*>(*it) != nullptr ) {
+            //Die();
+            //Respawn();
+        }
+    }
+    SDL_Event event;
+    if( SDL_PollEvent( &event ) ){
+        switch( event.type ){
+            case SDL_KEYDOWN:
+                switch( event.key.keysym.sym ){
+                    case SDLK_UP:
+                        pushDirection(DIR_UP);
+                        break;
+                    case SDLK_DOWN:
+                        pushDirection(DIR_DOWN);
+                        break;
+                    case SDLK_LEFT:
+                        pushDirection(DIR_LEFT);
+                        break;
+                    case SDLK_RIGHT:
+                        pushDirection(DIR_RIGHT);
+                        break;
+                }
+                break;
+            case SDL_KEYUP:
+
+                break;
+        }
+    }
     Move();
     ResetMesh();
     for( auto it = m_segments.begin(); it != m_segments.end(); ++it ) {

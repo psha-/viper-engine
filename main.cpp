@@ -5,14 +5,16 @@
 #include "shader.h"
 #include "texture.h"
 #include "transform.h"
-#include "camera.h"
 #include "game.h"
+#include "camera.h"
+#include "snake.h"
+#include "walls.h"
+#include "apple.h"
 
 #define WIDTH 1200
 #define HEIGHT 600
 static const int FPS = 60;
 static const double DELAY_TIME = 1000.f / FPS;
-
 
 int main()
 {
@@ -20,18 +22,6 @@ int main()
     Uint32 frameTime = frameStart;
 
     Display display(WIDTH,HEIGHT,"The Snake");
-    Game game;
-
-    std::vector<Vertex> vertices = {
-                            Vertex(glm::vec3(-0.5,-0.5,0), glm::vec2(0,0)),
-                            Vertex(glm::vec3(0,0.5,0), glm::vec2(0,0)),
-                            Vertex(glm::vec3(0.5,-0.5,0), glm::vec2(0,0)),
-    };
-
-    std::vector<unsigned int> indices = {0,1,2};
-
-    //Mesh mesh(vertices, indices);
-    //Mesh mesh2( "./res/monkey3.obj");
     Shader shader("./res/basicShader");
     Texture texture("./res/bricks.jpg");
     Camera camera(glm::vec3(0,0,-30), 70.0f, (float)WIDTH/(float)HEIGHT, 0.01f, 1000.0f);
@@ -39,7 +29,17 @@ int main()
 
     float counter = 0.0f;
 
-    game.Init();
+    GameObject* snake = new Snake();
+    GameObject* walls = new Walls();
+    GameObject* apple = new Apple();
+
+    GameState* level1 = new GameState();
+    level1->AddObject(snake);
+    level1->AddObject(walls);
+    level1->AddObject(apple);
+
+    Game::Instance().AddState("level1", level1);
+    Game::Instance().Init();
 
     while(!display.isClosed()) {
         Uint32 currentTimeTicks = SDL_GetTicks();
@@ -61,7 +61,7 @@ int main()
         texture.Bind(0);
 
         shader.Update(cameraTransform, camera);
-        game.Update(deltaTime);
+        Game::Instance().Update(deltaTime);
         display.Update();
         counter += 0.01f;
 
@@ -72,6 +72,8 @@ int main()
 		}
 
     }
+
+    Game::Instance().Destroy();
 
     return 0;
 }

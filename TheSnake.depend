@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1454502203 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
+1454542153 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
 	<iostream>
 	<GL/glew.h>
 	"display.h"
@@ -7,8 +7,11 @@
 	"shader.h"
 	"texture.h"
 	"transform.h"
-	"camera.h"
 	"game.h"
+	"camera.h"
+	"snake.h"
+	"walls.h"
+	"apple.h"
 
 1448318054 source:/home/akrastev/Codeblocks/TheSnake/display.cpp
 	"display.h"
@@ -84,27 +87,30 @@
 	<algorithm>
 	<map>
 
-1454509612 source:/home/akrastev/Codeblocks/TheSnake/snake.cpp
+1454543041 source:/home/akrastev/Codeblocks/TheSnake/snake.cpp
 	"snake.h"
 	"mesh.h"
+	"apple.h"
+	"walls.h"
 
-1454456374 /home/akrastev/Codeblocks/TheSnake/snake.h
+1454541412 /home/akrastev/Codeblocks/TheSnake/snake.h
 	<deque>
 	<SDL2/SDL.h>
-	"renderable.h"
+	"temporal.h"
 
-1454456296 source:/home/akrastev/Codeblocks/TheSnake/game.cpp
+1454541861 source:/home/akrastev/Codeblocks/TheSnake/game.cpp
 	"game.h"
 	<SDL2/SDL.h>
 	"mesh.h"
 	<iostream>
 
-1454455940 /home/akrastev/Codeblocks/TheSnake/game.h
-	"snake.h"
-	"walls.h"
+1454542118 /home/akrastev/Codeblocks/TheSnake/game.h
+	"gamestate.h"
+	<string>
 	<vector>
+	<map>
 
-1454409965 /home/akrastev/Codeblocks/TheSnake/gameobject.h
+1454537621 /home/akrastev/Codeblocks/TheSnake/gameobject.h
 	"component.h"
 	<string>
 	<vector>
@@ -133,9 +139,36 @@
 1454509485 source:/home/akrastev/Codeblocks/TheSnake/renderable.cpp
 	"renderable.h"
 
-1454455809 /home/akrastev/Codeblocks/TheSnake/walls.h
-	"renderable.h"
+1454540243 /home/akrastev/Codeblocks/TheSnake/walls.h
+	"materialized.h"
 
-1454509319 source:/home/akrastev/Codeblocks/TheSnake/walls.cpp
+1454540249 source:/home/akrastev/Codeblocks/TheSnake/walls.cpp
 	"walls.h"
+
+1454540202 /home/akrastev/Codeblocks/TheSnake/materialized.h
+	"renderable.h"
+	<vector>
+
+1454540535 /home/akrastev/Codeblocks/TheSnake/temporal.h
+	"materialized.h"
+
+1454542518 source:/home/akrastev/Codeblocks/TheSnake/materialized.cpp
+	"game.h"
+	"materialized.h"
+
+1454540532 source:/home/akrastev/Codeblocks/TheSnake/temporal.cpp
+	"temporal.h"
+
+1454539041 /home/akrastev/Codeblocks/TheSnake/gamestate.h
+	"gameobject.h"
+	<vector>
+
+1454538500 source:/home/akrastev/Codeblocks/TheSnake/gamestate.cpp
+	"gamestate.h"
+
+1454540642 source:/home/akrastev/Codeblocks/TheSnake/apple.cpp
+	"apple.h"
+
+1454540799 /home/akrastev/Codeblocks/TheSnake/apple.h
+	"temporal.h"
 

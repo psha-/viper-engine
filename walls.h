@@ -1,15 +1,14 @@
 #ifndef WALLS_H
 #define WALLS_H
 
-#include "renderable.h"
+#include "materialized.h"
 
 
-class Walls : public Renderable
+class Walls : public Materialized
 {
     public:
         Walls();
         void Init();
-        void Update(float deltatime);
         virtual ~Walls();
     protected:
     private:

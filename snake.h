@@ -3,9 +3,9 @@
 
 #include <deque>
 #include <SDL2/SDL.h>
-#include "renderable.h"
+#include "temporal.h"
 
-class Snake: public Renderable
+class Snake: public Temporal
 {
     public:
         Snake();

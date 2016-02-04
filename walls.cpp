@@ -26,11 +26,6 @@ void Walls::Init()
     InitMesh();
 }
 
-void Walls::Update(float deltaTime)
-{
-    Renderable::Update(deltaTime);
-}
-
 
 Walls::~Walls()
 {

@@ -37,6 +37,8 @@
 			<Add library="GLEW" />
 			<Add library="SDL2" />
 		</Linker>
+		<Unit filename="apple.cpp" />
+		<Unit filename="apple.h" />
 		<Unit filename="camera.h" />
 		<Unit filename="collisioncomponent.cpp" />
 		<Unit filename="collisioncomponent.h" />
@@ -48,7 +50,11 @@
 		<Unit filename="game.h" />
 		<Unit filename="gameobject.cpp" />
 		<Unit filename="gameobject.h" />
+		<Unit filename="gamestate.cpp" />
+		<Unit filename="gamestate.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="materialized.cpp" />
+		<Unit filename="materialized.h" />
 		<Unit filename="mesh.cpp" />
 		<Unit filename="mesh.h" />
 		<Unit filename="obj_loader.cpp" />
@@ -63,6 +69,8 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="stb_image.h" />
+		<Unit filename="temporal.cpp" />
+		<Unit filename="temporal.h" />
 		<Unit filename="texture.cpp" />
 		<Unit filename="texture.h" />
 		<Unit filename="transform.h" />

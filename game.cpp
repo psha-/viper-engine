@@ -5,56 +5,24 @@
 
 #include <iostream>
 
-Game::Game():m_snake(),m_boundaries()
+Game::Game()
 {
 }
+
 void Game::Init()
 {
-    m_boundaries.Init();
-    SpawnSnake();
+    for( auto it = m_activeState->GetObjects().begin(); it != m_activeState->GetObjects().end(); ++it) {
+        (*it)->Init();
+    }
     SpawnApple();
 
 }
 
 void Game::Update(float deltaTime)
 {
-    SDL_Event event;
-    if( SDL_PollEvent( &event ) ){
-        switch( event.type ){
-            /* Keyboard event */
-            /* Pass the event data onto PrintKeyInfo() */
-            case SDL_KEYDOWN:
-                switch( event.key.keysym.sym ){
-                    case SDLK_UP:
-                        m_snake.pushDirection(Snake::DIR_UP);
-                        break;
-                    case SDLK_DOWN:
-                        m_snake.pushDirection(Snake::DIR_DOWN);
-                        break;
-                    case SDLK_LEFT:
-                        m_snake.pushDirection(Snake::DIR_LEFT);
-                        break;
-                    case SDLK_RIGHT:
-                        m_snake.pushDirection(Snake::DIR_RIGHT);
-                        break;
-                }
-                break;
-            case SDL_KEYUP:
-
-                break;
-
-            /* SDL_QUIT event (window close) */
-            //case SDL_QUIT:
-                //quit = 1;
-                //break;
-
-            default:
-                break;
-        }
-
+    for( auto it = m_activeState->GetObjects().begin(); it != m_activeState->GetObjects().end(); ++it) {
+        (*it)->Update(deltaTime);
     }
-    m_snake.Update(deltaTime);
-    m_boundaries.Update(deltaTime);
     //Draw(apples.begin(), apples.end());
     //if( testCollision(boundaries.begin(), boundaries.end())) {
     //    m_snake.Die();
@@ -76,28 +44,36 @@ void Game::Update(float deltaTime)
 
 }
 
+void Game::AddState(std::string name, GameState* state)
+{
+    m_states[name] = state;
+    m_activeState = state;
+}
+
+void Game::Destroy()
+{
+    for( auto it = m_activeState->GetObjects().begin(); it != m_activeState->GetObjects().end(); ++it) {
+        delete *it;
+    }
+}
+
 Game::~Game()
 {
     //dtor
 }
-void Game::SpawnSnake()
-{
-    m_snake.Init();
-}
 
 void Game::SpawnApple()
 {
-    apples.push_back(std::pair<short, short>(rand()%19-9,rand()%19-9));
 }
 
 template<typename Iterator>
 bool Game::testCollision(const Iterator& begin, const Iterator& end)
 {
-    auto head = m_snake.getSegments().front();
-    for( auto it = begin; it != end; ++it) {
-        if( (*it).first == head.first && (*it).second == head.second ) {
-            return true;
-        }
-    }
+    //auto head = m_snake.getSegments().front();
+    //for( auto it = begin; it != end; ++it) {
+    //    if( (*it).first == head.first && (*it).second == head.second ) {
+    //        return true;
+    //    }
+    //}
     return false;
 }
