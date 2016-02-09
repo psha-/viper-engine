@@ -12,10 +12,10 @@ void Snake::Init()
     Uint32 elapsedTime = SDL_GetTicks();
 
     m_segments = {
-        std::pair<short, short>(0,0),
-        std::pair<short, short>(0,1),
-        std::pair<short, short>(0,2),
-        std::pair<short, short>(0,3),
+        Segment(0,0),
+        Segment(0,1),
+        Segment(0,2),
+        Segment(0,3),
     };
 
     speed = 2;
@@ -63,16 +63,16 @@ void Snake::Move()
     auto newSegment = *m_segments.begin();
     switch( direction ) {
         case DIR_UP:
-            newSegment.second++;
+            newSegment.y++;
             break;
         case DIR_DOWN:
-            newSegment.second--;
+            newSegment.y--;
             break;
         case DIR_LEFT:
-            newSegment.first++;
+            newSegment.x++;
             break;
         case DIR_RIGHT:
-            newSegment.first--;
+            newSegment.x--;
             break;
     }
     m_segments.push_front(newSegment);
@@ -124,7 +124,7 @@ void Snake::Update(float deltaTime)
     Move();
     ResetMesh();
     for( auto it = m_segments.begin(); it != m_segments.end(); ++it ) {
-        DrawSquare(glm::vec3((*it).first, (*it).second, 0), 1);
+        DrawSquare(glm::vec3((*it).x, (*it).y, 0), 1);
     }
     InitMesh();
     Renderable::Update(deltaTime);

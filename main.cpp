@@ -6,6 +6,8 @@
 #include "texture.h"
 #include "transform.h"
 #include "game.h"
+#include "snakecollider.h"
+#include "materialized.h"
 #include "camera.h"
 #include "snake.h"
 #include "walls.h"
@@ -28,6 +30,9 @@ int main()
     Transform cameraTransform;
 
     float counter = 0.0f;
+
+    Collider* snakeCollider = new SnakeCollider();
+    Materialized::SetCollider( snakeCollider );
 
     GameObject* snake = new Snake();
     GameObject* walls = new Walls();
@@ -73,6 +78,7 @@ int main()
 
     }
 
+    delete snakeCollider;
     Game::Instance().Destroy();
 
     return 0;

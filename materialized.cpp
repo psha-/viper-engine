@@ -17,7 +17,7 @@ std::vector<Materialized *> Materialized::GetCollisions()
     collisions.reserve(10);
     for( auto it = Game::Instance().GetActiveState()->GetObjects().begin(); it != Game::Instance().GetActiveState()->GetObjects().end(); ++it) {
         Materialized *obj = static_cast<Materialized*>(*it);
-        if( obj != nullptr) {
+        if( obj != nullptr && CheckCollision(obj)) {
             collisions.push_back(obj);
         }
     }
@@ -25,8 +25,10 @@ std::vector<Materialized *> Materialized::GetCollisions()
     return collisions;
 }
 
-bool Materialized::CheckCollision(Materialized *)
+bool Materialized::CheckCollision(Materialized * target)
 {
+    return false;
+    //return target.CheckCollision(m_collider)
 }
 
 Materialized::~Materialized()

@@ -40,6 +40,8 @@
 		<Unit filename="apple.cpp" />
 		<Unit filename="apple.h" />
 		<Unit filename="camera.h" />
+		<Unit filename="collider.cpp" />
+		<Unit filename="collider.h" />
 		<Unit filename="collisioncomponent.cpp" />
 		<Unit filename="collisioncomponent.h" />
 		<Unit filename="component.cpp" />
@@ -65,6 +67,8 @@
 		<Unit filename="shader.h" />
 		<Unit filename="snake.cpp" />
 		<Unit filename="snake.h" />
+		<Unit filename="snakecollider.cpp" />
+		<Unit filename="snakecollider.h" />
 		<Unit filename="stb_image.c">
 			<Option compilerVar="CC" />
 		</Unit>

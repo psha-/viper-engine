@@ -30,7 +30,6 @@ class Game
         void operator=(Game const&);
         std::map<std::string, GameState*> m_states;
         GameState* m_activeState;
-        std::vector<std::pair<short, short>> apples;
         template<typename Iterator>
         bool testCollision(const Iterator& begin, const Iterator& end);
         void SpawnApple();

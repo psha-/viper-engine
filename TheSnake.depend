@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1454542153 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
+1454589163 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
 	<iostream>
 	<GL/glew.h>
 	"display.h"
@@ -8,6 +8,8 @@
 	"texture.h"
 	"transform.h"
 	"game.h"
+	"snakecollider.h"
+	"materialized.h"
 	"camera.h"
 	"snake.h"
 	"walls.h"
@@ -87,13 +89,13 @@
 	<algorithm>
 	<map>
 
-1454543041 source:/home/akrastev/Codeblocks/TheSnake/snake.cpp
+1454589247 source:/home/akrastev/Codeblocks/TheSnake/snake.cpp
 	"snake.h"
 	"mesh.h"
 	"apple.h"
 	"walls.h"
 
-1454541412 /home/akrastev/Codeblocks/TheSnake/snake.h
+1454589224 /home/akrastev/Codeblocks/TheSnake/snake.h
 	<deque>
 	<SDL2/SDL.h>
 	"temporal.h"
@@ -104,7 +106,7 @@
 	"mesh.h"
 	<iostream>
 
-1454542118 /home/akrastev/Codeblocks/TheSnake/game.h
+1454589066 /home/akrastev/Codeblocks/TheSnake/game.h
 	"gamestate.h"
 	<string>
 	<vector>
@@ -145,14 +147,15 @@
 1454540249 source:/home/akrastev/Codeblocks/TheSnake/walls.cpp
 	"walls.h"
 
-1454540202 /home/akrastev/Codeblocks/TheSnake/materialized.h
+1454589487 /home/akrastev/Codeblocks/TheSnake/materialized.h
 	"renderable.h"
+	"collider.h"
 	<vector>
 
 1454540535 /home/akrastev/Codeblocks/TheSnake/temporal.h
 	"materialized.h"
 
-1454542518 source:/home/akrastev/Codeblocks/TheSnake/materialized.cpp
+1454585423 source:/home/akrastev/Codeblocks/TheSnake/materialized.cpp
 	"game.h"
 	"materialized.h"
 
@@ -171,4 +174,17 @@
 
 1454540799 /home/akrastev/Codeblocks/TheSnake/apple.h
 	"temporal.h"
+
+1454587241 /home/akrastev/Codeblocks/TheSnake/collider.h
+
+1454584545 source:/home/akrastev/Codeblocks/TheSnake/collider.cpp
+	"collider.h"
+
+1454589129 /home/akrastev/Codeblocks/TheSnake/snakecollider.h
+	"collider.h"
+	"snake.h"
+	<vector>
+
+1454589276 source:/home/akrastev/Codeblocks/TheSnake/snakecollider.cpp
+	"snakecollider.h"
 

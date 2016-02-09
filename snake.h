@@ -5,6 +5,13 @@
 #include <SDL2/SDL.h>
 #include "temporal.h"
 
+struct Segment {
+    Segment(short x_, short y_):x(x_),y(y_)
+    {}
+    short x;
+    short y;
+};
+
 class Snake: public Temporal
 {
     public:
@@ -39,7 +46,7 @@ class Snake: public Temporal
         float speed;
         const unsigned short directionBufferLength = 3;
         std::deque<unsigned short> nextDirection;
-        std::deque<std::pair<short, short>> m_segments;
+        std::deque<Segment> m_segments;
         bool addingSegment = false;
 };
 
