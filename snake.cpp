@@ -8,7 +8,7 @@ elapsedTime(),
 addingSegment(false),
 m_segments(),
 nextDirection(),
-speed(2)
+speed()
 {
 }
 
@@ -27,6 +27,8 @@ void Snake::Init()
         Segment(0,7),
         Segment(0,8),
     };
+
+    speed=2;
 
     nextDirection = {DIR_UP};
 }

@@ -34,7 +34,7 @@ class Snake: public Temporal
         }
         void pushDirection(unsigned short dir);
         void Update(float deltaTime);
-        inline void Accelerate(float s) {
+        inline void Accelerate(float s=1) {
             speed += s;
         };
         void AddSegment();

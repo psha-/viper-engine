@@ -22,6 +22,7 @@ void Apple::Update(float deltaTime)
         Die();
         Respawn();
         Snake::Instance()->AddSegment();
+        Snake::Instance()->Accelerate(0.5);
         std::cout<<"apple collision\n";
     }
     Renderable::Update(deltaTime);
