@@ -1,9 +1,14 @@
 #include "snake.h"
 #include "mesh.h"
-#include "apple.h"
-#include "walls.h"
 
-Snake::Snake():addingSegment(false)
+#include <iostream>
+
+Snake::Snake():
+elapsedTime(),
+addingSegment(false),
+m_segments(),
+nextDirection(),
+speed(2)
 {
 }
 
@@ -16,9 +21,13 @@ void Snake::Init()
         Segment(0,1),
         Segment(0,2),
         Segment(0,3),
+        Segment(0,4),
+        Segment(0,5),
+        Segment(0,6),
+        Segment(0,7),
+        Segment(0,8),
     };
 
-    speed = 2;
     nextDirection = {DIR_UP};
 }
 
@@ -37,11 +46,6 @@ void Snake::pushDirection(unsigned short dir) {
             break;
     }
     nextDirection.push_back(dir);
-}
-
-void Snake::Die() {
-    m_segments.clear();
-    Temporal::Die();
 }
 
 void Snake::AddSegment() {
@@ -82,21 +86,17 @@ void Snake::Move()
     else {
         addingSegment = false;
     }
+
+    if( CheckSelfCollision() ) {
+        //Die();
+        //Respawn();
+        std::cout<<"self collision\n";
+    }
+
 }
 
 void Snake::Update(float deltaTime)
 {
-    std::vector<Materialized*> collisions = GetCollisions();
-    for( auto it = collisions.begin(); it != collisions.end(); ++it ) {
-        if( static_cast<Apple*>(*it) != nullptr ) {
-            //(*it)->Die();
-            //AddSegment();
-        }
-        if( static_cast<Walls*>(*it) != nullptr ) {
-            //Die();
-            //Respawn();
-        }
-    }
     SDL_Event event;
     if( SDL_PollEvent( &event ) ){
         switch( event.type ){
@@ -129,6 +129,19 @@ void Snake::Update(float deltaTime)
     InitMesh();
     Renderable::Update(deltaTime);
 }
+
+bool Snake::CheckSelfCollision()
+{
+    auto head = getSegments().front();
+
+    for( auto it = m_segments.begin()+1; it != m_segments.end(); ++it) {
+        if( *it == head ) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 Snake::~Snake()
 {

@@ -1,7 +1,7 @@
 #include "game.h"
 #include "materialized.h"
 
-Materialized::Materialized()
+Materialized::Materialized():m_collider()
 {
     //ctor
 }
@@ -15,7 +15,8 @@ std::vector<Materialized *> Materialized::GetCollisions()
 {
     std::vector<Materialized*> collisions = std::vector<Materialized*>();
     collisions.reserve(10);
-    for( auto it = Game::Instance().GetActiveState()->GetObjects().begin(); it != Game::Instance().GetActiveState()->GetObjects().end(); ++it) {
+    auto objects = Game::Instance().GetActiveState()->GetObjects();
+    for( auto it = objects.begin(); it != objects.end(); ++it) {
         Materialized *obj = static_cast<Materialized*>(*it);
         if( obj != nullptr && CheckCollision(obj)) {
             collisions.push_back(obj);
@@ -25,10 +26,9 @@ std::vector<Materialized *> Materialized::GetCollisions()
     return collisions;
 }
 
-bool Materialized::CheckCollision(Materialized * target)
+bool Materialized::CheckCollision(Materialized* target)
 {
-    return false;
-    //return target.CheckCollision(m_collider)
+    return m_collider->CheckCollision(target->GetCollider());
 }
 
 Materialized::~Materialized()

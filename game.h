@@ -30,9 +30,5 @@ class Game
         void operator=(Game const&);
         std::map<std::string, GameState*> m_states;
         GameState* m_activeState;
-        template<typename Iterator>
-        bool testCollision(const Iterator& begin, const Iterator& end);
-        void SpawnApple();
-        //void InitBoundaries();
 };
 #endif // GAME_H

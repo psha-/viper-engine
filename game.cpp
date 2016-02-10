@@ -14,7 +14,6 @@ void Game::Init()
     for( auto it = m_activeState->GetObjects().begin(); it != m_activeState->GetObjects().end(); ++it) {
         (*it)->Init();
     }
-    SpawnApple();
 
 }
 
@@ -23,7 +22,6 @@ void Game::Update(float deltaTime)
     for( auto it = m_activeState->GetObjects().begin(); it != m_activeState->GetObjects().end(); ++it) {
         (*it)->Update(deltaTime);
     }
-    //Draw(apples.begin(), apples.end());
     //if( testCollision(boundaries.begin(), boundaries.end())) {
     //    m_snake.Die();
     //    SpawnSnake();
@@ -62,18 +60,3 @@ Game::~Game()
     //dtor
 }
 
-void Game::SpawnApple()
-{
-}
-
-template<typename Iterator>
-bool Game::testCollision(const Iterator& begin, const Iterator& end)
-{
-    //auto head = m_snake.getSegments().front();
-    //for( auto it = begin; it != end; ++it) {
-    //    if( (*it).first == head.first && (*it).second == head.second ) {
-    //        return true;
-    //    }
-    //}
-    return false;
-}

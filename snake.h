@@ -6,18 +6,27 @@
 #include "temporal.h"
 
 struct Segment {
+    Segment(){}
     Segment(short x_, short y_):x(x_),y(y_)
     {}
     short x;
     short y;
+    bool operator==(const Segment& rhs) {
+        return rhs.x == x && rhs.y == y;
+    }
 };
 
 class Snake: public Temporal
 {
     public:
         Snake();
+        static Snake* Instance()
+        {
+            static Snake* instance = new Snake();
+            return instance;
+        }
         void Init();
-        inline auto getSegments() const {
+        inline auto& getSegments() const {
             return m_segments;
         }
         inline unsigned short getDirection() const {
@@ -25,7 +34,6 @@ class Snake: public Temporal
         }
         void pushDirection(unsigned short dir);
         void Update(float deltaTime);
-        void Die();
         inline void Accelerate(float s) {
             speed += s;
         };
@@ -41,7 +49,10 @@ class Snake: public Temporal
         };
     protected:
     private:
+        Snake(Snake const&);
+        void operator=(Snake const&);
         void Move();
+        bool CheckSelfCollision();
         Uint32 elapsedTime;
         float speed;
         const unsigned short directionBufferLength = 3;

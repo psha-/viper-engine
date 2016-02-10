@@ -67,8 +67,6 @@
 		<Unit filename="shader.h" />
 		<Unit filename="snake.cpp" />
 		<Unit filename="snake.h" />
-		<Unit filename="snakecollider.cpp" />
-		<Unit filename="snakecollider.h" />
 		<Unit filename="stb_image.c">
 			<Option compilerVar="CC" />
 		</Unit>

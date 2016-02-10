@@ -6,7 +6,7 @@ class Collider
 {
     public:
         Collider();
-        virtual bool CheckCollision(Collider *) = 0;
+        virtual bool CheckCollision(Collider *);
         virtual ~Collider();
     protected:
     private:

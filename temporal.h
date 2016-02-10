@@ -1,6 +1,7 @@
 #ifndef TEMPORAL_H
 #define TEMPORAL_H
 
+#include "collider.h"
 #include "materialized.h"
 
 

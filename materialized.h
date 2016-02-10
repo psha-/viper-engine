@@ -9,18 +9,18 @@ class Materialized : public Renderable
 {
     public:
         Materialized();
-        inline static void SetCollider(Collider* collider) {
-            //Materialized::m_collider = collider;
-        }
-        inline static Collider* const GetCollider() {
-            return m_collider;
-        }
         void Update(float);
         virtual std::vector<Materialized *> GetCollisions();
         virtual bool CheckCollision(Materialized *);
+        Collider* GetCollider() {
+            return m_collider;
+        }
         virtual ~Materialized();
     protected:
-        static Collider* m_collider;
+        void setCollider( Collider* collider) {
+            m_collider = collider;
+        }
+        Collider* m_collider;
     private:
 };
 

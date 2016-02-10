@@ -2,17 +2,18 @@
 #define WALLS_H
 
 #include "materialized.h"
-
+#include "snake.h"
 
 class Walls : public Materialized
 {
     public:
         Walls();
         void Init();
+        void Update(float);
         virtual ~Walls();
     protected:
     private:
-        std::vector<std::pair<short, short>> m_segments;
+        std::vector<Segment> m_segments;
 
 };
 

@@ -6,8 +6,6 @@
 #include "texture.h"
 #include "transform.h"
 #include "game.h"
-#include "snakecollider.h"
-#include "materialized.h"
 #include "camera.h"
 #include "snake.h"
 #include "walls.h"
@@ -31,10 +29,9 @@ int main()
 
     float counter = 0.0f;
 
-    Collider* snakeCollider = new SnakeCollider();
-    Materialized::SetCollider( snakeCollider );
+    // TODO: Do all this with GameFactory
 
-    GameObject* snake = new Snake();
+    GameObject* snake = Snake::Instance();
     GameObject* walls = new Walls();
     GameObject* apple = new Apple();
 
@@ -78,7 +75,6 @@ int main()
 
     }
 
-    delete snakeCollider;
     Game::Instance().Destroy();
 
     return 0;

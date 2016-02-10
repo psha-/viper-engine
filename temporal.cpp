@@ -7,6 +7,7 @@ Temporal::Temporal()
 
 void Temporal::Die()
 {
+    ResetMesh();
 }
 
 void Temporal::Respawn()

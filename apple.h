@@ -2,17 +2,18 @@
 #define APPLE_H
 
 #include "temporal.h"
-
+#include "snake.h"
 
 class Apple : public Temporal
 {
     public:
         Apple();
         void Init();
+        void Update(float);
         virtual ~Apple();
     protected:
     private:
-        std::pair<short, short> m_pos;
+        Segment m_pos;
 };
 
 #endif // APPLE_H
