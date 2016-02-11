@@ -1,8 +1,6 @@
 #include "snake.h"
 #include "mesh.h"
 
-#include <iostream>
-
 Snake::Snake():
 elapsedTime(),
 addingSegment(false),
@@ -17,15 +15,11 @@ void Snake::Init()
     Uint32 elapsedTime = SDL_GetTicks();
 
     m_segments = {
-        Segment(0,0),
-        Segment(0,1),
         Segment(0,2),
-        Segment(0,3),
-        Segment(0,4),
-        Segment(0,5),
-        Segment(0,6),
-        Segment(0,7),
-        Segment(0,8),
+        Segment(0,1),
+        Segment(0,0),
+        Segment(0,-1),
+        Segment(0,-2),
     };
 
     speed=2;
@@ -90,9 +84,8 @@ void Snake::Move()
     }
 
     if( CheckSelfCollision() ) {
-        //Die();
-        //Respawn();
-        std::cout<<"self collision\n";
+        Die();
+        Respawn();
     }
 
 }

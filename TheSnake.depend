@@ -87,17 +87,16 @@
 	<algorithm>
 	<map>
 
-1455145323 source:/home/akrastev/Codeblocks/TheSnake/snake.cpp
+1455173498 source:/home/akrastev/Codeblocks/TheSnake/snake.cpp
 	"snake.h"
 	"mesh.h"
-	<iostream>
 
 1455145237 /home/akrastev/Codeblocks/TheSnake/snake.h
 	<deque>
 	<SDL2/SDL.h>
 	"temporal.h"
 
-1455133170 source:/home/akrastev/Codeblocks/TheSnake/game.cpp
+1455145406 source:/home/akrastev/Codeblocks/TheSnake/game.cpp
 	"game.h"
 	<SDL2/SDL.h>
 	"mesh.h"
@@ -142,9 +141,8 @@
 	"materialized.h"
 	"snake.h"
 
-1455143446 source:/home/akrastev/Codeblocks/TheSnake/walls.cpp
+1455173527 source:/home/akrastev/Codeblocks/TheSnake/walls.cpp
 	"walls.h"
-	<iostream>
 
 1455140221 /home/akrastev/Codeblocks/TheSnake/materialized.h
 	"renderable.h"
@@ -169,9 +167,8 @@
 1454538500 source:/home/akrastev/Codeblocks/TheSnake/gamestate.cpp
 	"gamestate.h"
 
-1455145211 source:/home/akrastev/Codeblocks/TheSnake/apple.cpp
+1455173527 source:/home/akrastev/Codeblocks/TheSnake/apple.cpp
 	"apple.h"
-	<iostream>
 
 1455142096 /home/akrastev/Codeblocks/TheSnake/apple.h
 	"temporal.h"

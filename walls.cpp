@@ -1,8 +1,5 @@
 #include "walls.h"
 
-#include <iostream>
-
-
 Walls::Walls()
 {
     //ctor
@@ -37,7 +34,6 @@ void Walls::Update(float deltaTime)
         if( *it == head ) {
             Snake::Instance()->Die();
             Snake::Instance()->Respawn();
-            std::cout<<"wall collision\n";
         }
     }
     Renderable::Update(deltaTime);

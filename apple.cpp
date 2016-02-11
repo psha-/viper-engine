@@ -1,7 +1,5 @@
 #include "apple.h"
 
-#include <iostream>
-
 Apple::Apple():m_pos()
 {
     //ctor
@@ -23,7 +21,6 @@ void Apple::Update(float deltaTime)
         Respawn();
         Snake::Instance()->AddSegment();
         Snake::Instance()->Accelerate(0.5);
-        std::cout<<"apple collision\n";
     }
     Renderable::Update(deltaTime);
 }
