@@ -26,7 +26,7 @@ class Snake: public Temporal
             return instance;
         }
         void Init();
-        inline auto& getSegments() const {
+        inline std::deque<Segment>& getSegments() {
             return m_segments;
         }
         inline unsigned short getDirection() const {
@@ -55,10 +55,10 @@ class Snake: public Temporal
         bool CheckSelfCollision();
         Uint32 elapsedTime;
         float speed;
-        const unsigned short directionBufferLength = 3;
+        const unsigned short directionBufferLength;
         std::deque<unsigned short> nextDirection;
         std::deque<Segment> m_segments;
-        bool addingSegment = false;
+        bool addingSegment;
 };
 
 #endif // SNAKE_H

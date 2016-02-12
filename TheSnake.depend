@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1455144960 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
+1455282534 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
 	<iostream>
 	<GL/glew.h>
 	"display.h"
@@ -91,7 +91,7 @@
 	"snake.h"
 	"mesh.h"
 
-1455145237 /home/akrastev/Codeblocks/TheSnake/snake.h
+1455283647 /home/akrastev/Codeblocks/TheSnake/snake.h
 	<deque>
 	<SDL2/SDL.h>
 	"temporal.h"

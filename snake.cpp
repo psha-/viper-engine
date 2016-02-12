@@ -3,10 +3,11 @@
 
 Snake::Snake():
 elapsedTime(),
-addingSegment(false),
 m_segments(),
 nextDirection(),
-speed()
+speed(),
+directionBufferLength(2),
+addingSegment(false)
 {
 }
 
