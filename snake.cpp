@@ -89,6 +89,12 @@ void Snake::Move()
         Respawn();
     }
 
+    ResetMesh();
+    for( auto it = m_segments.begin(); it != m_segments.end(); ++it ) {
+        DrawSquare(glm::vec3((*it).x, (*it).y, 0), 1);
+    }
+    InitMesh();
+
 }
 
 void Snake::Update(float deltaTime)
@@ -118,11 +124,6 @@ void Snake::Update(float deltaTime)
         }
     }
     Move();
-    ResetMesh();
-    for( auto it = m_segments.begin(); it != m_segments.end(); ++it ) {
-        DrawSquare(glm::vec3((*it).x, (*it).y, 0), 1);
-    }
-    InitMesh();
     Renderable::Update(deltaTime);
 }
 
