@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1455282534 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
+1455301733 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
 	<iostream>
 	<GL/glew.h>
 	"display.h"
@@ -7,11 +7,8 @@
 	"shader.h"
 	"texture.h"
 	"transform.h"
+	"gamefactory.h"
 	"game.h"
-	"camera.h"
-	"snake.h"
-	"walls.h"
-	"apple.h"
 
 1448318054 source:/home/akrastev/Codeblocks/TheSnake/display.cpp
 	"display.h"
@@ -87,7 +84,7 @@
 	<algorithm>
 	<map>
 
-1455173498 source:/home/akrastev/Codeblocks/TheSnake/snake.cpp
+1455299417 source:/home/akrastev/Codeblocks/TheSnake/snake.cpp
 	"snake.h"
 	"mesh.h"
 
@@ -195,4 +192,17 @@
 	"snake.h"
 	<iostream>
 	<vector>
+
+1455301784 source:/home/akrastev/Codeblocks/TheSnake/gamefactory.cpp
+	"gamefactory.h"
+	"game.h"
+	"camera.h"
+	"snake.h"
+	"walls.h"
+	"apple.h"
+
+1455301545 /home/akrastev/Codeblocks/TheSnake/gamefactory.h
+	"game.h"
+	"gamestate.h"
+	<string>
 

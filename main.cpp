@@ -7,11 +7,8 @@
 #include "shader.h"
 #include "texture.h"
 #include "transform.h"
+#include "gamefactory.h"
 #include "game.h"
-#include "camera.h"
-#include "snake.h"
-#include "walls.h"
-#include "apple.h"
 
 #define WIDTH 1200
 #define HEIGHT 600
@@ -31,18 +28,8 @@ int main()
 
     float counter = 0.0f;
 
-    // TODO: Do all this with GameFactory
 
-    GameObject* snake = Snake::Instance();
-    GameObject* walls = new Walls();
-    GameObject* apple = new Apple();
-
-    GameState* level1 = new GameState();
-    level1->AddObject(snake);
-    level1->AddObject(walls);
-    level1->AddObject(apple);
-
-    Game::Instance().AddState("level1", level1);
+    gamefactory::AddLevel("level1");
     Game::Instance().Init();
 
     while(!display.isClosed()) {
