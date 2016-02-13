@@ -1,6 +1,8 @@
 #ifndef RENDERABLE_H
 #define RENDERABLE_H
 
+#define GLM_FORCE_RADIANS
+
 #include "gameobject.h"
 #include "mesh.h"
 #include <glm/glm.hpp>

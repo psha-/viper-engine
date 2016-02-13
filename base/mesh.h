@@ -1,6 +1,8 @@
 #ifndef MESH_H
 #define MESH_H
 
+#define GLM_FORCE_RADIANS
+
 #include <string>
 #include <vector>
 #include "obj_loader.h"

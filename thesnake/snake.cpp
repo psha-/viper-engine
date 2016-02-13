@@ -3,17 +3,17 @@
 
 Snake::Snake():
 elapsedTime(),
-m_segments(),
-nextDirection(),
 speed(),
 directionBufferLength(2),
+nextDirection(),
+m_segments(),
 addingSegment(false)
 {
 }
 
 void Snake::Init()
 {
-    Uint32 elapsedTime = SDL_GetTicks();
+    elapsedTime = SDL_GetTicks();
 
     m_segments = {
         Segment(0,2),

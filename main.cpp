@@ -29,7 +29,7 @@ int main()
     float counter = 0.0f;
 
 
-    gamefactory::AddLevel("level1");
+    gamefactory::AddLevel("snake_l1");
     Game::Instance().Init();
 
     while(!display.isClosed()) {

@@ -50,6 +50,8 @@
 		<Unit filename="display.h" />
 		<Unit filename="game.cpp" />
 		<Unit filename="game.h" />
+		<Unit filename="gamefactory.cpp" />
+		<Unit filename="gamefactory.h" />
 		<Unit filename="gameobject.cpp" />
 		<Unit filename="gameobject.h" />
 		<Unit filename="gamestate.cpp" />

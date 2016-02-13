@@ -1,6 +1,5 @@
 #include "gamefactory.h"
 #include "game.h"
-#include "camera.h"
 #include "snake.h"
 #include "walls.h"
 #include "apple.h"
@@ -17,7 +16,7 @@ GameState* gamefactory::LoadLevel( std::string name )
     GameState* level = new GameState();
 
     // TODO: Use external resource file
-    if( "level1" == name ) {
+    if( "snake_l1" == name ) {
         GameObject* snake = Snake::Instance();
         GameObject* walls = new Walls();
         GameObject* apple = new Apple();
