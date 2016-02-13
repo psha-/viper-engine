@@ -131,7 +131,8 @@ bool Snake::CheckSelfCollision()
 {
     auto head = getSegments().front();
 
-    for( auto it = m_segments.begin()+1; it != m_segments.end(); ++it) {
+    // It's not possible to hit the 1st 4 segments
+    for( auto it = m_segments.begin()+4; it != m_segments.end(); ++it) {
         if( *it == head ) {
             return true;
         }
