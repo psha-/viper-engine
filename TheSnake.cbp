@@ -13,6 +13,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="base" />
+					<Add directory="thesnake" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -37,49 +39,45 @@
 			<Add library="GLEW" />
 			<Add library="SDL2" />
 		</Linker>
-		<Unit filename="apple.cpp" />
-		<Unit filename="apple.h" />
-		<Unit filename="camera.h" />
-		<Unit filename="collider.cpp" />
-		<Unit filename="collider.h" />
-		<Unit filename="collisioncomponent.cpp" />
-		<Unit filename="collisioncomponent.h" />
-		<Unit filename="component.cpp" />
-		<Unit filename="component.h" />
-		<Unit filename="display.cpp" />
-		<Unit filename="display.h" />
-		<Unit filename="game.cpp" />
-		<Unit filename="game.h" />
-		<Unit filename="gamefactory.cpp" />
-		<Unit filename="gamefactory.h" />
-		<Unit filename="gameobject.cpp" />
-		<Unit filename="gameobject.h" />
-		<Unit filename="gamestate.cpp" />
-		<Unit filename="gamestate.h" />
-		<Unit filename="main.cpp" />
-		<Unit filename="materialized.cpp" />
-		<Unit filename="materialized.h" />
-		<Unit filename="mesh.cpp" />
-		<Unit filename="mesh.h" />
-		<Unit filename="obj_loader.cpp" />
-		<Unit filename="obj_loader.h" />
-		<Unit filename="renderable.cpp" />
-		<Unit filename="renderable.h" />
-		<Unit filename="shader.cpp" />
-		<Unit filename="shader.h" />
-		<Unit filename="snake.cpp" />
-		<Unit filename="snake.h" />
-		<Unit filename="stb_image.c">
+		<Unit filename="base/camera.h" />
+		<Unit filename="base/collider.cpp" />
+		<Unit filename="base/collider.h" />
+		<Unit filename="base/display.cpp" />
+		<Unit filename="base/display.h" />
+		<Unit filename="base/game.cpp" />
+		<Unit filename="base/game.h" />
+		<Unit filename="base/gamefactory.cpp" />
+		<Unit filename="base/gamefactory.h" />
+		<Unit filename="base/gameobject.cpp" />
+		<Unit filename="base/gameobject.h" />
+		<Unit filename="base/gamestate.cpp" />
+		<Unit filename="base/gamestate.h" />
+		<Unit filename="base/materialized.cpp" />
+		<Unit filename="base/materialized.h" />
+		<Unit filename="base/mesh.cpp" />
+		<Unit filename="base/mesh.h" />
+		<Unit filename="base/obj_loader.cpp" />
+		<Unit filename="base/obj_loader.h" />
+		<Unit filename="base/renderable.cpp" />
+		<Unit filename="base/renderable.h" />
+		<Unit filename="base/shader.cpp" />
+		<Unit filename="base/shader.h" />
+		<Unit filename="base/stb_image.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="stb_image.h" />
-		<Unit filename="temporal.cpp" />
-		<Unit filename="temporal.h" />
-		<Unit filename="texture.cpp" />
-		<Unit filename="texture.h" />
-		<Unit filename="transform.h" />
-		<Unit filename="walls.cpp" />
-		<Unit filename="walls.h" />
+		<Unit filename="base/stb_image.h" />
+		<Unit filename="base/temporal.cpp" />
+		<Unit filename="base/temporal.h" />
+		<Unit filename="base/texture.cpp" />
+		<Unit filename="base/texture.h" />
+		<Unit filename="base/transform.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="thesnake/apple.cpp" />
+		<Unit filename="thesnake/apple.h" />
+		<Unit filename="thesnake/snake.cpp" />
+		<Unit filename="thesnake/snake.h" />
+		<Unit filename="thesnake/walls.cpp" />
+		<Unit filename="thesnake/walls.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

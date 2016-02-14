@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1455375515 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
+1455488326 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
 	<iostream>
 	<GL/glew.h>
 	"display.h"
@@ -9,6 +9,9 @@
 	"transform.h"
 	"gamefactory.h"
 	"game.h"
+	"snake.h"
+	"apple.h"
+	"walls.h"
 
 1448318054 source:/home/akrastev/Codeblocks/TheSnake/display.cpp
 	"display.h"
@@ -211,12 +214,12 @@
 
 1455103493 /home/akrastev/Codeblocks/TheSnake/base/collider.h
 
-1448318054 source:/home/akrastev/Codeblocks/TheSnake/base/display.cpp
+1455385268 source:/home/akrastev/Codeblocks/TheSnake/base/display.cpp
 	"display.h"
 	<GL/glew.h>
 	<iostream>
 
-1447922321 /home/akrastev/Codeblocks/TheSnake/base/display.h
+1455385268 /home/akrastev/Codeblocks/TheSnake/base/display.h
 	<string>
 	<SDL2/SDL.h>
 
@@ -236,7 +239,7 @@
 	"gameobject.h"
 	<vector>
 
-1455375461 /home/akrastev/Codeblocks/TheSnake/base/gameobject.h
+1455482920 /home/akrastev/Codeblocks/TheSnake/base/gameobject.h
 	<string>
 	<vector>
 	"glm/gtx/transform.hpp"
@@ -253,19 +256,19 @@
 	<vector>
 	<string>
 
-1455375554 source:/home/akrastev/Codeblocks/TheSnake/base/gamefactory.cpp
+1455487973 source:/home/akrastev/Codeblocks/TheSnake/base/gamefactory.cpp
 	"gamefactory.h"
-	"game.h"
-	"snake.h"
-	"walls.h"
-	"apple.h"
+	<fstream>
+	<iostream>
 
-1455301545 /home/akrastev/Codeblocks/TheSnake/base/gamefactory.h
+1455488427 /home/akrastev/Codeblocks/TheSnake/base/gamefactory.h
 	"game.h"
 	"gamestate.h"
+	<map>
 	<string>
+	<functional>
 
-1455283647 /home/akrastev/Codeblocks/TheSnake/thesnake/snake.h
+1455485421 /home/akrastev/Codeblocks/TheSnake/thesnake/snake.h
 	<deque>
 	<SDL2/SDL.h>
 	"temporal.h"
@@ -285,15 +288,15 @@
 	<glm/glm.hpp>
 	<vector>
 
-1455143142 /home/akrastev/Codeblocks/TheSnake/thesnake/walls.h
+1455487306 /home/akrastev/Codeblocks/TheSnake/thesnake/walls.h
 	"materialized.h"
 	"snake.h"
 
-1455142096 /home/akrastev/Codeblocks/TheSnake/thesnake/apple.h
+1455487191 /home/akrastev/Codeblocks/TheSnake/thesnake/apple.h
 	"temporal.h"
 	"snake.h"
 
-1454414634 source:/home/akrastev/Codeblocks/TheSnake/base/gameobject.cpp
+1455482925 source:/home/akrastev/Codeblocks/TheSnake/base/gameobject.cpp
 	"gameobject.h"
 
 1454538500 source:/home/akrastev/Codeblocks/TheSnake/base/gamestate.cpp
@@ -320,7 +323,7 @@
 1455375744 source:/home/akrastev/Codeblocks/TheSnake/base/camera.cpp
 	"camera.h"
 
-1455375631 /home/akrastev/Codeblocks/TheSnake/base/camera.h
+1455384564 /home/akrastev/Codeblocks/TheSnake/base/camera.h
 	<glm/glm.hpp>
 	<glm/gtx/transform.hpp>
 
@@ -329,7 +332,7 @@
 	<fstream>
 	<iostream>
 
-1448036658 /home/akrastev/Codeblocks/TheSnake/base/shader.h
+1455384935 /home/akrastev/Codeblocks/TheSnake/base/shader.h
 	<string>
 	<GL/glew.h>
 	"transform.h"
@@ -361,16 +364,17 @@
 	<cassert>
 	<iostream>
 
-1447936975 /home/akrastev/Codeblocks/TheSnake/base/texture.h
+1455384970 /home/akrastev/Codeblocks/TheSnake/base/texture.h
 	<string>
 	<GL/glew.h>
 
 1455173527 source:/home/akrastev/Codeblocks/TheSnake/thesnake/apple.cpp
 	"apple.h"
 
-1455381313 source:/home/akrastev/Codeblocks/TheSnake/thesnake/snake.cpp
+1455488187 source:/home/akrastev/Codeblocks/TheSnake/thesnake/snake.cpp
 	"snake.h"
 	"mesh.h"
+	"gamefactory.h"
 
 1455173527 source:/home/akrastev/Codeblocks/TheSnake/thesnake/walls.cpp
 	"walls.h"

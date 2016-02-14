@@ -1,6 +1,8 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
+#define GLM_FORCE_RADIANS
+
 #include <string>
 #include <GL/glew.h>
 

@@ -1,8 +1,5 @@
 #include "gamefactory.h"
-#include "game.h"
-#include "snake.h"
-#include "walls.h"
-#include "apple.h"
+#include <fstream>
 
 
 void gamefactory::AddLevel( std::string name )
@@ -11,19 +8,38 @@ void gamefactory::AddLevel( std::string name )
     Game::Instance().AddState(name, level);
 }
 
-GameState* gamefactory::LoadLevel( std::string name )
+GameState* gamefactory::LoadLevel( std::string filePath )
 {
     GameState* level = new GameState();
 
-    // TODO: Use external resource file
-    if( "snake_l1" == name ) {
-        GameObject* snake = Snake::Instance();
-        GameObject* walls = new Walls();
-        GameObject* apple = new Apple();
-
-        level->AddObject(snake);
-        level->AddObject(walls);
-        level->AddObject(apple);
+    std::string gameObjectName;
+    std::ifstream levelFile(filePath);
+    if (levelFile.is_open()) {
+        // TODO make the file format more sophisticated
+        while ( getline(levelFile, gameObjectName) )
+        {
+            GameObject* obj = gamefactory::Instantiate(gameObjectName);
+            level->AddObject(obj);
+        }
+        levelFile.close();
     }
     return level;
+}
+
+std::map<std::string, std::function<GameObject*()>> gamefactory::gameObjectImplRegistry;
+
+void gamefactory::RegisterGameObjectImpl(std::string name, std::function<GameObject*()> gameObjectInstantiateFunction)
+{
+    gamefactory::gameObjectImplRegistry[name] = gameObjectInstantiateFunction;
+}
+
+GameObject* gamefactory::Instantiate(std::string name)
+{
+    GameObject * instance = nullptr;
+
+    auto it = gamefactory::gameObjectImplRegistry.find(name);
+    if(it != gamefactory::gameObjectImplRegistry.end())
+        instance = it->second();
+
+    return instance;
 }

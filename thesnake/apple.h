@@ -9,6 +9,10 @@ class Apple : public Temporal
     public:
         Apple();
         void Init();
+        static GameObject* Instantiate()
+        {
+            return new Apple();
+        }
         void Update(float);
         virtual ~Apple();
     protected:

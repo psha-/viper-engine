@@ -1,6 +1,8 @@
 #ifndef SHADER_H
 #define SHADER_H
 
+#define GLM_FORCE_RADIANS
+
 #include <string>
 #include <GL/glew.h>
 #include "transform.h"

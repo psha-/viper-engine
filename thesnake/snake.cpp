@@ -1,5 +1,6 @@
 #include "snake.h"
 #include "mesh.h"
+#include "gamefactory.h"
 
 Snake::Snake():
 elapsedTime(),
@@ -145,3 +146,6 @@ Snake::~Snake()
 {
     //dtor
 }
+
+
+

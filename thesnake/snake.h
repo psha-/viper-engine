@@ -26,6 +26,10 @@ class Snake: public Temporal
             return instance;
         }
         void Init();
+        static GameObject* Instantiate()
+        {
+            return Instance();
+        }
         inline std::deque<Segment>& getSegments() {
             return m_segments;
         }

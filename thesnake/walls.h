@@ -9,6 +9,10 @@ class Walls : public Materialized
     public:
         Walls();
         void Init();
+        static GameObject* Instantiate()
+        {
+            return new Walls();
+        }
         void Update(float);
         virtual ~Walls();
     protected:

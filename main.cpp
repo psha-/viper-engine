@@ -9,6 +9,9 @@
 #include "transform.h"
 #include "gamefactory.h"
 #include "game.h"
+#include "snake.h"
+#include "apple.h"
+#include "walls.h"
 
 #define WIDTH 1200
 #define HEIGHT 600
@@ -17,6 +20,7 @@ static const double DELAY_TIME = 1000.f / FPS;
 
 int main()
 {
+
     Uint32 frameStart = SDL_GetTicks();
     Uint32 frameTime = frameStart;
 
@@ -28,8 +32,12 @@ int main()
 
     float counter = 0.0f;
 
+    // TODO make main unaware of those
+    gamefactory::RegisterGameObjectImpl("Snake", &Snake::Instantiate);
+    gamefactory::RegisterGameObjectImpl("Apple", &Apple::Instantiate);
+    gamefactory::RegisterGameObjectImpl("Walls", &Walls::Instantiate);
 
-    gamefactory::AddLevel("snake_l1");
+    gamefactory::AddLevel("res/snake_l1.txt");
     Game::Instance().Init();
 
     while(!display.isClosed()) {
