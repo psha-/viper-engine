@@ -72,6 +72,7 @@
 		<Unit filename="base/texture.h" />
 		<Unit filename="base/transform.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="res/snake_l1.txt" />
 		<Unit filename="thesnake/apple.cpp" />
 		<Unit filename="thesnake/apple.h" />
 		<Unit filename="thesnake/snake.cpp" />
