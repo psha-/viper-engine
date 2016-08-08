@@ -5,16 +5,16 @@
 #include "gamestate.h"
 #include <map>
 #include <string>
-#include <functional>
 
 namespace gamefactory
 {
-        extern std::map<std::string, std::function<GameObject*()>> gameObjectImplRegistry;
+        template<typename F>
+        extern std::map<std::string, F> gameObjectImplRegistry;
 
         void AddLevel(std::string name);
         GameState* LoadLevel(std::string filePath);
-
-        void RegisterGameObjectImpl(std::string name, std::function<GameObject*()> gameObjectInstantiateFunction);
+        template<typename F>
+        void RegisterGameObjectImpl(std::string name, F> gameObjectInstantiateFunction);
         GameObject* Instantiate(std::string name);
 }
 

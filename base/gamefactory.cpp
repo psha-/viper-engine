@@ -1,5 +1,6 @@
 #include "gamefactory.h"
 #include <fstream>
+#include <functional>
 
 
 void gamefactory::AddLevel( std::string name )
@@ -26,9 +27,11 @@ GameState* gamefactory::LoadLevel( std::string filePath )
     return level;
 }
 
-std::map<std::string, std::function<GameObject*()>> gamefactory::gameObjectImplRegistry;
+template<typename F>
+std::map<std::string, F> gamefactory::gameObjectImplRegistry;
 
-void gamefactory::RegisterGameObjectImpl(std::string name, std::function<GameObject*()> gameObjectInstantiateFunction)
+template<typename F>
+void gamefactory::RegisterGameObjectImpl(std::string name, F> gameObjectInstantiateFunction)
 {
     gamefactory::gameObjectImplRegistry[name] = gameObjectInstantiateFunction;
 }
