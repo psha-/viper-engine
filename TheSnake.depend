@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1455488326 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
+1470646640 source:/home/akrastev/Codeblocks/TheSnake/main.cpp
 	<iostream>
 	<GL/glew.h>
 	"display.h"
@@ -256,19 +256,18 @@
 	<vector>
 	<string>
 
-1455487973 source:/home/akrastev/Codeblocks/TheSnake/base/gamefactory.cpp
+1470646324 source:/home/akrastev/Codeblocks/TheSnake/base/gamefactory.cpp
 	"gamefactory.h"
 	<fstream>
-	<iostream>
 
-1455488427 /home/akrastev/Codeblocks/TheSnake/base/gamefactory.h
+1470646324 /home/akrastev/Codeblocks/TheSnake/base/gamefactory.h
 	"game.h"
 	"gamestate.h"
 	<map>
 	<string>
 	<functional>
 
-1455485421 /home/akrastev/Codeblocks/TheSnake/thesnake/snake.h
+1470646637 /home/akrastev/Codeblocks/TheSnake/thesnake/snake.h
 	<deque>
 	<SDL2/SDL.h>
 	"temporal.h"
@@ -288,11 +287,11 @@
 	<glm/glm.hpp>
 	<vector>
 
-1455487306 /home/akrastev/Codeblocks/TheSnake/thesnake/walls.h
+1470646633 /home/akrastev/Codeblocks/TheSnake/thesnake/walls.h
 	"materialized.h"
 	"snake.h"
 
-1455487191 /home/akrastev/Codeblocks/TheSnake/thesnake/apple.h
+1470646634 /home/akrastev/Codeblocks/TheSnake/thesnake/apple.h
 	"temporal.h"
 	"snake.h"
 
@@ -371,7 +370,7 @@
 1455173527 source:/home/akrastev/Codeblocks/TheSnake/thesnake/apple.cpp
 	"apple.h"
 
-1455488187 source:/home/akrastev/Codeblocks/TheSnake/thesnake/snake.cpp
+1470646631 source:/home/akrastev/Codeblocks/TheSnake/thesnake/snake.cpp
 	"snake.h"
 	"mesh.h"
 	"gamefactory.h"
